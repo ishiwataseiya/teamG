@@ -1,0 +1,15 @@
+<!--ページテンプレートを適用する-->
+{% extends 'base.html' %}
+<!--ヘッダー情報のページタイトルを設定する-->
+{% block title %}Photo Gallery{% endblock %}
+
+    {% block contents %}
+
+
+    <!--タイトルテンプレートの組み込み-->
+    {% include "photo_title_.html" %}
+
+    <!--投稿一覧テンプレートの組み込み-->
+    {% include "photo_list_.html" %}
+
+    {% endblock %}
