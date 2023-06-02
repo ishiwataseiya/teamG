@@ -10,6 +10,7 @@ class CategoryAdmin(admin.ModelAdmin):
     list_display_links = ('id','title')
 
 class PhotoPostAdmin(admin.ModelAdmin):
+
     '''管理ページのレコード一覧に表示するカラムを設定するクラス'''
     #レコード一覧にidとtitleを表示
     list_display = ('id','title')
@@ -21,3 +22,6 @@ admin.site.register(Category,CategoryAdmin)
 
 #Django管理サイトにPhotoPost,PhotoPost,PhotoPostAdminを登録する
 admin.site.register(PhotoPost,PhotoPostAdmin)
+=======
+admin.site.register(PhotoPost,PhotoPostAdmin)
+
