@@ -5,9 +5,9 @@ from accounts.models import CustomUser
 class Category(models.Model):
 #投稿する写真のカテゴリを管理するモデル
 #カテゴリ名のフィールド
- title = models.CharField(
-    verbose_name='カテゴリ',#フィールドのタイトル
-    max_length=20)
+   title = models.CharField(
+      verbose_name='カテゴリ',#フィールドのタイトル
+      max_length=20)
  
 def __str__(self):
     #オブジェクトを文字列に変換して返す
