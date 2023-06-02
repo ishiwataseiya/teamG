@@ -43,5 +43,30 @@ class CreatePhotoView(CreateView):
         postdata.user = self.request.user
         postdata.save()
         return super().form_valid(form)
+    
+class CategoryView(ListView):
+  '''カテゴリページのビュー
+  
+  Attributes:
+  template_name: レンダリングするテンプレート
+  paginate_by: 1ページに表示するレコードの件数
+  '''
+  # index.htmlをレンダリングする
+  template_name = 'index.html'
+  #1ページに表示するレコードの件数
+  paginate_by = 9
+
+  def get_queryset(self):
+    '''クエリを実行する
+    
+    self.kwargsの取得が必要なため、クラス変数querysetではなく、
+    get_queryset()のオーバーライドによりクエリを実行する
+    
+    Returns
+      クエリによって取得されたレコード
+    '''
+    #self.kwargsでキーワードの辞書を取得し、
+    #categoryキーの値(Categorys)
+  
 
 # Create your views here.
