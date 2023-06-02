@@ -5,7 +5,8 @@ app_name = 'photo'
 
 urlpatterns = [
     path('',views.IndexView.as_view(),name='index'),
-    path('post/',views.CreatePhotoview.as_view(), name='post')
+
+    path('post/',views.CreatePhotoview.as_view(), name='post'),
     path('post_done/',
           views.PostSuccessView.as_view(),
           name='post_done'),
