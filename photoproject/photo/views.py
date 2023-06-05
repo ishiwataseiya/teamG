@@ -41,3 +41,30 @@ class CreatePhotoView(CreateView):
 class PostSuccessView(TemplateView):
     template_name = 'post_success.html'
 
+class CategoryView(ListView):
+    '''カテゴリページのビュー
+  
+  Attributes:
+  template_name: レンダリングするテンプレート
+  paginate_by: 1ページに表示するレコードの件数
+  '''
+    # index.htmlをレンダリングする
+    template_name = 'index.html'
+    #1ページに表示するレコードの件数
+    paginate_by = 9
+
+    def get_queryset(self):
+        '''クエリを実行する
+        self.kwargsの取得が必要なため、クラス変数querysetではなく、
+        get_queryset()のオーバーライドによりクエリを実行する
+        
+        Returns:
+            クエリによって取得されたレコード'''
+        #self.kwargsでキーワードの辞書を取得し、
+        #categoryキーの値(Categorysテーブルのid)を取得
+        category_id = self.kwargs['category']
+        #filter(フィールド名=id)で絞り込む
+        categories = PhotoPost.objects.filter(
+        category=category_id).order_by('-posted_at')
+        #クエリによって取得されたレコードを返す
+        return categories

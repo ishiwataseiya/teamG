@@ -35,7 +35,8 @@
                           View</button>
                   <!--カテゴリを表示するボタン-->
                   <button type="button"
-                          class="btn btn-sm btn-outline-secondary">
+                          class="btn btn-sm btn-outline-secondary"
+                          onclick="location.href='{% url 'photo:photos_cat' category=record.category.id %}'">
                           {{record.category.title}}</button>
                 </div>
                 <small class="text-muted">
