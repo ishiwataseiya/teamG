@@ -22,6 +22,4 @@ admin.site.register(Category,CategoryAdmin)
 
 #Django管理サイトにPhotoPost,PhotoPost,PhotoPostAdminを登録する
 admin.site.register(PhotoPost,PhotoPostAdmin)
-=======
-admin.site.register(PhotoPost,PhotoPostAdmin)
 
