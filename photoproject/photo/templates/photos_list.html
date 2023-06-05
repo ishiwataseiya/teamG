@@ -3,36 +3,50 @@
     <div class="container">
       <!--行要素を配置-->
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <!--レコードが格納されたobject_listから
+            レコードを１行ずつrecordに取り出す-->
+        {% for record in object_list %}
         <!--列要素を配置-->
         <div class="col">
           <div class="card shadow-sm">
-            <svg class="bd-placeholder-img card-img-top"
+            <!--svgタグをimgタグに変更
+                src属性を追加して１枚目のイメージのURLを設定-->
+          <img src="{{ record.image1.url }}"
+              class="bd-placeholder-img card-img-top"
               width="100%" height="225"
               xmlns="http://www.w3.org/2000/svg"
-              role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice"
+              role="img" aria-label="Placeholder: Thumbnail" 
+              preserveAspectRatio="xMidYMid slice"
               focusable="false">
               <title>Placeholder</title>
               <rect width="100%" height="100%" fill="#55595c"/>
-            </svg>
+            </img>
             <!--タイトルとボタンを出力するブロック-->
             <div class="card-body">
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <p class="card-text">
+                <!--titleフィールドを出力-->
+                {{record.title}}
+              </p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
+                  <!--詳細ページを表示するボタン-->
                   <button type="button"
                           class="btn btn-sm btn-outline-secondary">
                           View</button>
-                  <!--テキストを変更-->
+                  <!--カテゴリを表示するボタン-->
                   <button type="button"
                           class="btn btn-sm btn-outline-secondary">
-                          Edit</button>
+                          {{record.category.title}}</button>
                 </div>
-                <small class="text-muted">UserName</small>
+                <small class="text-muted">
+                  {{record.user.username}}</small>
               </div>
             </div>
           </div>
           <!--列要素ここまで-->
         </div>
+        <!--Forブロック終了-->
+        {% endfor %}
         <!--行要素ここまで-->
       </div>
       <!--グリッドシステムここまで-->
