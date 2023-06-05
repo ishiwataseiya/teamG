@@ -16,6 +16,10 @@ from django.contrib.auth.decorators import login_required
 
 from .models import PhotoPost
 
+from django.views.generic import DetailView
+#django.views.genericからDeleteViewをインポート
+from django.views.generic import DeleteView
+
 
 class IndexView(ListView):
 
@@ -68,6 +72,7 @@ class CategoryView(ListView):
         category=category_id).order_by('-posted_at')
         #クエリによって取得されたレコードを返す
         return categories
+    
 class UserView(ListView):
     '''ユーザーの投稿一覧ページのビュー
     Attributes:
@@ -94,3 +99,48 @@ class UserView(ListView):
             user=user_id).order_by('-posted_at')
         #クエリによって取得されたレコードを返す
         return user_list
+    
+class DetailView(DetailView):
+	template_name ='detail.html'
+	model = PhotoPost
+
+class MypageView(ListView):
+    template_name = 'mypage.html'
+    paginate_py = 9
+
+    def get_queryset(self):
+        queryset = PhotoPost.objects.filter(
+            user=self.request.user).order_by('-posted_at')
+        return queryset
+
+class PhotoDeleteView(DeleteView):
+    '''レコードの削除を行うビュー
+    Attributes:
+        model: モデル
+        template_name: レンダリングするテンプレート
+        paginate_by: 1ページに表示するレコードの件数
+        success_url: 削除完了後のリダイレクト先のURL
+   '''
+    #操作の対象はPhotoPostモデル
+    model = PhotoPost
+    # photo_delete.htmlをレンダリングする
+    template_name ='photo_delete.html'
+    #処理完了後にマイページにリダイレクト
+    success_url = reverse_lazy('photo:mypage')
+
+    def delete(self,request,*args,**kwargs):
+        '''レコードの削除を行う
+
+        Parameters:
+            self: PhotoDeleteViewオブジェクト
+            request: WSGIRequest(HttpRequest)オブジェクト
+            args: 引数として渡される辞書(dict)
+            kwargs: キーワード付きの辞書(dict)
+                {'pk': 21}のようにレコードのidが渡される
+                  
+        Returns:
+            HttpResponseRedirect(success_url)を返して
+            success_urlにリダイレクト
+        '''
+       #スーパークラスのdelete()を実行
+        return super().delete(request,*args,**kwargs)
