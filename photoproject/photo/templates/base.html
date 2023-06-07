@@ -20,6 +20,12 @@
         crossorigin="anonymous">
 <link rel="stylesheet" href="css/color.css">
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Potta+One&display=swap" rel="stylesheet">
+
     <style>
       .bd-placeholder-img {
         font-size: 1.125rem;
@@ -49,6 +55,13 @@
       #bg {
         background-color: #fff1ab !important;
       }
+      .photo-size {
+        width: 1000!important;
+        height: 1000!important;
+      }
+      body{
+        font-family: 'Potta One', cursive;
+      }
     </style>
 
     
@@ -63,11 +76,10 @@
       <div class="row">
         <div class="col-sm-8 col-md-7 py-4">
           <!--ヘッダーのタイトルと本文-->
-          <h4 class="text-white">お気に入りを見つけよう！</h4>
+          <h4 class="text-white">お気に入りのポムポムプリンを見つけよう！</h4>
           <p class="text-light">
-            誰でも参加できる写真投稿サイトです。<br>
-            自分で撮影した写真なら何でもオッケー! <br>
-            でも、カテゴリに属する写真に限ります。<br>
+            誰でも参加できるポムポムプリン写真投稿サイトです。<br>
+            ポムポムプリンなら何でもオッケー! <br>
             コメントもつけてください！
           </p>
         </div>
@@ -93,6 +105,8 @@
               class="text-white">ログイン</a></li>
             <li><a href="mailto:admin@example.com" 
               class="text-white">Email me</a></li>
+            <li><a href="{% url 'accounts:R18' %}"
+              class="text-white">R18</a></li> 
             {% endif %}
           </ul>
         </div>

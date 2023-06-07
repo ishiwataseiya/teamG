@@ -144,3 +144,7 @@ class PhotoDeleteView(DeleteView):
         '''
        #スーパークラスのdelete()を実行
         return super().delete(request,*args,**kwargs)
+    
+class R18View(TemplateView):
+
+    template_name = "R18.html"
