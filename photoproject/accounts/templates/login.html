@@ -36,6 +36,12 @@
           font-size: 3.5rem;
         }
       }
+      #btn {
+        background-color: #6e3a06 !important;
+      }
+      #bg {
+        background-color: #fff1ab !important;
+      }
     </style>
 
     
@@ -43,7 +49,7 @@
     <link href={% static "css/signin.css" %}
           rel="stylesheet">
   </head>
-  <body class="text-center">
+  <body class="text-center" id="bg">
     
 <main class="form-signin">
 
@@ -54,9 +60,9 @@
     {% csrf_token %}
 
     <img class="mb-4"
-      src={% static "img/bootstrap-logo.svg" %}
-      alt="" width="72"
-      height="57">
+      src={% static 'img/pomu.png' %} 
+      alt="" width="200"
+      height="200">
     <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 
     <label for="Username" class="visually-hidden">
@@ -82,8 +88,9 @@
             placeholder="パスワード"
             required autofocus>
 
-      <input class="w-100 btn btn-lg btn-info text-light"
+      <input class="w-100 btn btn-lg text-light"
         type="submit"
+        id="btn"
         value="ログイン">
     
     <br><br>
