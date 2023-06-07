@@ -82,12 +82,12 @@
             placeholder="パスワード"
             required autofocus>
 
-      <input class="w-100 btn btn-lg btn-primary"
+      <input class="w-100 btn btn-lg btn-info text-light"
         type="submit"
         value="ログイン">
     
     <br><br>
-    <p><a href="#">パスワードを忘れましたか</a><p>
+    <p><a href="{% url 'password_reset' %}">パスワードを忘れましたか</a><p>
 
     <input type="hidden"
             name="next"

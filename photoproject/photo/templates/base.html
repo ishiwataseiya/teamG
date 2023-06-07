@@ -18,6 +18,7 @@
         rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
         crossorigin="anonymous">
+<link rel="stylesheet" href="css/color.css">
 
     <style>
       .bd-placeholder-img {
@@ -33,6 +34,21 @@
           font-size: 3.5rem;
         }
       }
+      #navbarHeader {
+        background-color: #834508 !important;
+      }
+      #nabi {
+        background-color: #6e3a06 !important;
+      }
+      #btn {
+        background-color: #6e3a06 !important;
+      }
+      #toggler {
+        background-color: #d0771e !important;
+      }
+      #bg {
+        background-color: #fff1ab !important;
+      }
     </style>
 
     
@@ -42,16 +58,16 @@
     <!--ページのヘッダー-->
     <header>
       <!--ナビゲーションバーのヘッダー-->
-    <div class="collapse bg-dark" id="navbarHeader">
+    <div class="collapse bg-info" id="navbarHeader">
     <div class="container">
       <div class="row">
         <div class="col-sm-8 col-md-7 py-4">
           <!--ヘッダーのタイトルと本文-->
           <h4 class="text-white">お気に入りを見つけよう！</h4>
-          <p class="text-muted">
-            誰でも参加できる写真投稿サイトです。
-            自分で撮影した写真なら何でもオッケー！
-            でも、カテゴリに属する写真に限ります。
+          <p class="text-light">
+            誰でも参加できる写真投稿サイトです。<br>
+            自分で撮影した写真なら何でもオッケー! <br>
+            でも、カテゴリに属する写真に限ります。<br>
             コメントもつけてください！
           </p>
         </div>
@@ -65,7 +81,7 @@
               class="text-white">マイページ</a></li>            
             <li><a href="{% url 'accounts:logout' %}"
               class="text-white">ログアウト</a></li>
-            <li><a href="#"
+            <li><a href="{% url 'password_reset' %}"
               class="text-white">パスワードのリセット</a></li>
             <li><a href="mailto:admin@example.com"
               class="text-white">Email me</a></li>
@@ -84,13 +100,13 @@
     </div>
   </div>
   <!--ナビゲーションバー-->
-  <div class="navbar navbar-dark bg-dark shadow-sm">
+  <div class="navbar navbar-light bg-info shadow-sm" id="nabi">
     <div class="container">
       <!--トップページのリンク-->
       <a href="{% url 'photo:index' %}"
         class="navbar-brand d-flex align-items-center">
-        <svg xmlns="http://www.w3.org/2000/svg" 
-        width="20" height="20" fill="none" 
+        <img src={% static 'img/pomu.png' %} 
+        width="100" height="80" fill="none" 
         stroke="currentColor" 
         stroke-linecap="round" 
         stroke-linejoin="round" 
@@ -101,11 +117,12 @@
         <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
         <circle cx="12" cy="13" r="4"/></svg>
       <!--リンクテキスト-->
-        <strong>Photo Gallery</strong>
+        <strong class="text-light">POMUKETU Gallery</strong>
       </a>
       <!--トグルボタン-->
       <button class="navbar-toggler"
               type="button"
+              id = "toggler"
               data-bs-toggle="collapse"
               data-bs-target="#navbarHeader" 
               aria-controls="navbarHeader"
@@ -123,11 +140,8 @@
   {% block contents %}{% endblock %}
 </main>
 
-<footer class="text-muted py-5">
+<footer class="text-muted py-5" id="bg">
   <div class="container">
-    <p class="float-end mb-1">
-      <a href="#">ページ上部に戻る</a>
-    </p>
     <!--フッターのテキストを任意のものに書き換え-->
     <p class="mb-1">
       Photo Gallery is &copy; Bootstrap, but please post a lot!</p>

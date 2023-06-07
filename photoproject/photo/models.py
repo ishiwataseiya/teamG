@@ -43,6 +43,7 @@ class PhotoPost(models.Model):
 
    comment = models.TextField(
       verbose_name='コメント',
+      max_length=2000,
       )
 
    image1 = models.ImageField(
