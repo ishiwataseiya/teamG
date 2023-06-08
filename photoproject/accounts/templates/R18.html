@@ -5,10 +5,21 @@
     <br>
     <div class="container">
         <div class="row">
+            <div align="center">
+
+                <div align="center" class="example">
+                    <img src='/static/img/pomu.png' alt="画像" width="300">
+                </div>
 
                 <h1 class = "text-center">18歳以上ですか？</h1>
-                <a class = " w-100 btn btn-lg text-center text-light" id="btn" href="https://www.sanrio.co.jp/characters/pompompurin/" role="button">はい</a>
-                <a class = " w-100 btn btn-lg text-center text-light" id="btn" href="https://www.sanrio.co.jp/characters/pompompurin/" role="button">いいえ</a>
+                <a class = "btn btn-lg text-center text-light example" 
+                    id="btn"
+                    href="{% url 'photo:index' %}"
+                    role="button">はい</a>
+                <a class = "btn btn-lg text-center text-light example"
+                    id="btn"
+                    href="https://www.sanrio.co.jp/characters/pompompurin/"
+                    role="button">いいえ</a>
 
         </div>
     </div>
