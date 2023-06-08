@@ -50,4 +50,7 @@ urlpatterns = [
             views.PhotoDeleteView.as_view(),
             name = 'photo_delete'
         ),
+    path('R18top/',
+            views.R18topView.as_view(),
+            name = 'R18top'),
 ]

@@ -22,8 +22,8 @@
               <rect width="100%" height="100%" fill="#55595c"/>
             </img>
             <!--タイトルとボタンを出力するブロック-->
-            <div class="card-body">
-              <p class="card-text text-center">
+            <div class="card-body "id="btn">
+              <p class="card-text text-center text-light">
                 <!--titleフィールドを出力-->
                 {{record.title}}
               </p>
@@ -31,17 +31,17 @@
                 <div class="btn-group">
                   <!--詳細ページを表示するボタン-->
                   <button type="button"
-                  class="btn btn-sm btn-outline-secondary"
+                  class="btn btn-sm btn-outline-light"
                   onclick="location.href='{% url 'photo:photo_detail' record.pk %}'">
                   View</button>
                   <!--カテゴリを表示するボタン-->
                   <button type="button"
-                          class="btn btn-sm btn-outline-secondary"
+                          class="btn btn-sm btn-outline-light"
                           onclick="location.href='{% url 'photo:photos_cat' category=record.category.id %}'">
                           {{record.category.title}}</button>
                 </div>
                 <a href="{% url 'photo:user_list' user=record.user.id %}">
-                  <small class="text-muted">
+                  <small class="text-light">
                     {{record.user.username}}</small>
                 </a>
               </div>

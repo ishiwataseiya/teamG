@@ -1,8 +1,82 @@
 <!--タイトルとナビゲーションボタン-->
 <section class="py-5 text-center" id="bg">
-  <div class="row py-lg-5">
-    <div class="col-lg-6 col-md-8 mx-auto">
+  <div class="">
+    <div class="col-lg-12 col-md-12 mx-auto">
 
+
+      <style>
+        * {
+          box-sizing: border-box;
+          list-style: none;
+          padding: 0;
+          margin: 0;
+        }
+        h1 {
+          margin-bottom: 100px;
+        }
+        h2 {
+          margin-bottom: 50px;
+        }
+        /* スライドする要素 */
+        .content {
+          width: 200px;
+          height: 200px;
+        }
+        /* スライドレールの枠 */
+        .wrap {
+          overflow: hidden;
+          display: flex;
+          align-items: center;
+          height: 200px;
+        }
+        /* content4つをまとめたスライドブロック */
+        .slideshow {
+          display: flex;
+          -webkit-animation: loop-slide 1s infinite linear 1s both;
+          animation: loop-slide 1s infinite linear 1s both;
+        }
+        @-webkit-keyframes loop-slide {
+          from {
+            transform: translateX(0);
+          }
+          to {
+            transform: translateX(-100%);
+          }
+        }
+        @keyframes loop-slide {
+          from {
+            transform: translateX(0);
+          }
+          to {
+            transform: translateX(-100%);
+          }
+        }
+        ul {
+          padding-left: 0rem!important;
+        }
+      </style>
+
+      <div class="wrap">
+        <ul class="slideshow">
+          <li class="content"><img src='/static/img/pomu6.png'width="200"></li>
+          <li class="content"><img src='/static/img/pomu7.png'width="200"></li>
+          <li class="content"><img src='/static/img/pomu6.png'width="200"></li>
+          <li class="content"><img src='/static/img/pomu7.png'width="200"></li>
+        </ul>
+        <ul class="slideshow">
+          <li class="content"><img src='/static/img/pomu6.png'width="200"></li>
+          <li class="content"><img src='/static/img/pomu7.png'width="200"></li>
+          <li class="content"><img src='/static/img/pomu6.png'width="200"></li>
+          <li class="content"><img src='/static/img/pomu7.png'width="200"></li>
+        </ul>
+        <ul class="slideshow">
+          <li class="content"><img src='/static/img/pomu6.png'width="200"></li>
+          <li class="content"><img src='/static/img/pomu7.png'width="200"></li>
+          <li class="content"><img src='/static/img/pomu6.png'width="200"></li>
+          <li class="content"><img src='/static/img/pomu7.png'width="200"></li>
+        </ul>
+      </div>
+      
       <!--タイトルと本文-->
       <h1 class="fw-info"><strong>POMUPOMU Photo</strong></h1>
       <p class="lead text-muted">

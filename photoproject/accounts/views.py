@@ -23,3 +23,4 @@ class SignUpSuccessView(TemplateView):
 class R18View(TemplateView):
 
     template_name = "R18.html"
+
